@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Category,Blogs
+from .models import Category,Blogs,Comment
 
 # Register your models here.
 
@@ -12,5 +12,10 @@ class BlogAdmin(admin.ModelAdmin):
     search_fields = ('id','title','category__category_name','status')
     list_editable = ('is_featured',)
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('id', 'blog', 'comment', 'created_at')
+
 admin.site.register(Category,CategoryAdmin)
 admin.site.register(Blogs,BlogAdmin)
+
+admin.site.register(Comment, CommentAdmin)

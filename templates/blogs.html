@@ -31,7 +31,7 @@
                      {% for comment in comments %}
                         <div class="card">
                             <div class="card-body">
-                                <p class="card-text mb-0">{{ comment }}</p>
+                                <p class="card-text mb-0">{{ comment.comment }}</p>
                                 <span>
                                     <small>{{ comment.user }}</small>
                                     <small>{{ comment.created_at | timesince }} ago</small>
